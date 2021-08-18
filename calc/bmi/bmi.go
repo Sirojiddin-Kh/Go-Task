@@ -4,28 +4,17 @@ import (
 	"fmt"
 )
 
-func BodyMassIndex(mass, height float32)  {
+func BodyMassIndex(mass, height float32) {
 
-	var bmi float32 = mass / (height * height)
+	var BMI float32 = mass / (height * height)
 
-	if (bmi => 18.4) and (bmi =< 25) {
-
-		fmt.Println("Normal weight")
-
-	} else if (bmi > 25) and (bmi =< 30) {
-
-		fmt.Println("Overweight")
-
-	} else if (bmi > 30) and (bmi =< 40) {
-
-		fmt.Println("Obesity")
-
-	} else if bmi > 40 {
-
-		fmt.Println("Morbid	Obesity")
-
+	if BMI < 18.5 {
+		fmt.Println("You are underweight")
+	} else if BMI >= 18.5 && BMI < 25.0 {
+		fmt.Println("Your weight is normal")
+	} else if BMI >= 25.0 && BMI < 30.0 {
+		fmt.Println("You're overweight")
 	} else {
-
-		fmt.Println("Mass and height to big")
+		fmt.Println("You're obese")
 	}
-}
+} 
